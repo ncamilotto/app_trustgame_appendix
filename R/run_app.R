@@ -33,7 +33,7 @@ run_app <- function() {
   # ===================================================================
   ui <- navbarPage(
     "Online Appendix",
-    theme = bs_theme(bootswatch = "lumen"),
+    theme = bslib::bs_theme(bootswatch = "lumen"),
 
     tabPanel("Home",
              fluidPage(
