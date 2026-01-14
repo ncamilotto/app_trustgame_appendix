@@ -35,91 +35,7 @@ run_app <- function() {
     "Online Appendix",
     theme = bslib::bs_theme(bootswatch = "lumen"),
 
-    shiny::tabPanel("Home",
-                    shiny::fluidPage(
-                      htmltools::tags$head(
-                        htmltools::tags$style(shiny::HTML("
-            .home-section {
-              padding-top: 20px;
-              padding-bottom: 20px;
-              border-bottom: 1px solid #eee;
-            }
-            .home-section h2 {
-              color: #0056b3;
-              border-bottom: 2px solid #0056b3;
-              padding-bottom: 10px;
-              margin-bottom: 20px;
-            }
-            .citation-box {
-              background-color: #f8f9fa;
-              border-left: 5px solid #007bff;
-              padding: 15px;
-              margin-top: 15px;
-              font-style: italic;
-            }
-          "))
-                      ),
-
-                      shiny::titlePanel("An Interactive Appendix for 'The Trust Game: A Historical and Methodological Analysis on the Frontier of Experimental and Behavioral Economics'"),
-
-                      shiny::div(class = "home-section",
-                                 shiny::h2("About the Article"),
-                                 shiny::p(shiny::strong("Authors:"), "Author 1, Author 2, and Author 3."),
-                                 shiny::p(shiny::strong("Abstract:")),
-                                 shiny::p("This paper provides a life-cycle analysis of the Trust Game, using its trajectory as a lens to clarify the boundaries between experimental and behavioral economics. We first trace its 1995 creation by Berg et al. as a challenge to calculative trust paradigms. A bibliometric study then maps its diffusion, revealing two divergent paths in economics: one, rooted in experimental economics, prioritizes measurement; the other, in behavioral economics, theory-testing. These paths differ in methods and validity standards, constituting an epistemic divide that illuminates the fields' evolving relationship."),
-
-                                 shiny::div(class = "citation-box",
-                                            shiny::p(shiny::strong("How to cite this work:")),
-                                            shiny::p("Author, A., Author, B., & Author, C. (Year). Title of the article. ",
-                                                     htmltools::tags$em("Journal Name, Volume"), "(Issue), pages."),
-                                            shiny::p(shiny::strong("DOI: "),
-                                                     htmltools::tags$a(href = "https://doi.org/YOUR_DOI_HERE", "https://doi.org/YOUR_DOI_HERE", target = "_blank"))
-                                 )
-                      ),
-
-                      shiny::div(class = "home-section",
-                                 shiny::h2("How to Use This Interactive Appendix"),
-                                 shiny::p("This web application is designed to provide an interactive exploration of the research clusters discussed in our paper.
-              It allows you to dynamically filter and view the data behind the figures."),
-                                 shiny::p("Navigate to the ", shiny::strong("Alluvial Explorer"), " tab to begin. You will find:"),
-                                 htmltools::tags$ul(
-                                   htmltools::tags$li(shiny::strong("Overall View:"), " Provides a global perspective on the entire corpus of articles,
-                        showing distributions by year, discipline, country, and journal."),
-                                   htmltools::tags$li(shiny::strong("Cluster View:"), " Allows you to select a specific research cluster from the dropdown menu.
-                        All plots and tables will then dynamically update to reflect only the articles belonging to that cluster.
-                        This is useful for in-depth analysis of a particular research stream.")
-                                 )
-                      ),
-
-                      shiny::div(class = "home-section",
-                                 shiny::h2("Code, Data, and Contact"),
-                                 shiny::p("We believe in open and reproducible science. All resources related to this project are publicly available."),
-                                 htmltools::tags$ul(
-                                   htmltools::tags$li(
-                                     shiny::icon("github"), " ",
-                                     shiny::strong("Shiny App Code:"), " The source code for this interactive application is available on ",
-                                     htmltools::tags$a(href = "https://github.com/YOUR_USERNAME/YOUR_APP_REPO", "GitHub.", target = "_blank")
-                                   ),
-                                   htmltools::tags$li(
-                                     shiny::icon("github"), " ",
-                                     shiny::strong("Data Processing Code:"), " The scripts used for data collection and preparation are available in a separate ",
-                                     htmltools::tags$a(href = "https://github.com/YOUR_USERNAME/YOUR_DATA_REPO", "repository on GitHub.", target = "_blank")
-                                   ),
-                                   htmltools::tags$li(
-                                     shiny::icon("database"), " ",
-                                     shiny::strong("Data Source:"), " The bibliographic data was extracted from the Web of Science Core Collection on [Date].
-                  A processed version of the data used in this app is available at [Link to Zenodo/OSF/Data Repository if applicable]."
-                                   ),
-                                   htmltools::tags$li(
-                                     shiny::icon("envelope"), " ",
-                                     shiny::strong("Contact:"), " For any questions, suggestions, or issues, please contact [Your Name] at ",
-                                     htmltools::tags$a(href = "mailto:your.email@university.edu", "your.email@university.edu.")
-                                   )
-                                 )
-                      )
-                    )
-    ),
-
+    # --- PREMIER ONGLET : ALLUVIAL EXPLORER (Désormais par défaut) ---
     shiny::tabPanel("Alluvial Explorer",
                     shiny::fluidPage(
                       shiny::titlePanel("Evolution of Research Clusters"),
@@ -253,8 +169,95 @@ run_app <- function() {
                                  )
                       )
                     )
+    ),
+
+    # --- SECOND ONGLET : ABOUT ---
+    shiny::tabPanel("About",
+                    shiny::fluidPage(
+                      htmltools::tags$head(
+                        htmltools::tags$style(shiny::HTML("
+            .about-section {
+              padding-top: 20px;
+              padding-bottom: 20px;
+              border-bottom: 1px solid #eee;
+            }
+            .about-section h2 {
+              color: #0056b3;
+              border-bottom: 2px solid #0056b3;
+              padding-bottom: 10px;
+              margin-bottom: 20px;
+            }
+            .citation-box {
+              background-color: #f8f9fa;
+              border-left: 5px solid #007bff;
+              padding: 15px;
+              margin-top: 15px;
+              font-style: italic;
+            }
+          "))
+                      ),
+
+                      shiny::titlePanel("An Interactive Appendix for 'The Trust Game: A Historical and Methodological Analysis on the Frontier of Experimental and Behavioral Economics'"),
+
+                      shiny::div(class = "about-section",
+                                 shiny::h2("About the Article"),
+                                 shiny::p(shiny::strong("Authors:"), "Camilotto Nicolas"),
+                                 shiny::p(shiny::strong("Abstract:")),
+                                 shiny::p("This paper provides a life-cycle analysis of the Trust Game, using its trajectory as a lens to clarify the boundaries between experimental and behavioral economics. We first trace its 1995 creation by Berg et al. as a challenge to calculative trust paradigms. A bibliometric study then maps its diffusion, revealing two divergent paths in economics: one, rooted in experimental economics, prioritizes measurement; the other, in behavioral economics, theory-testing. These paths differ in methods and validity standards, constituting an epistemic divide that illuminates the fields' evolving relationship."),
+
+                                 shiny::div(class = "citation-box",
+                                            shiny::p(shiny::strong("How to cite this work:")),
+                                            shiny::p("Author, A., Author, B., & Author, C. (Year). Title of the article. ",
+                                                     htmltools::tags$em("Journal Name, Volume"), "(Issue), pages."),
+                                            shiny::p(shiny::strong("DOI: "),
+                                                     htmltools::tags$a(href = "https://doi.org/YOUR_DOI_HERE", "https://doi.org/YOUR_DOI_HERE", target = "_blank"))
+                                 )
+                      ),
+
+                      shiny::div(class = "about-section",
+                                 shiny::h2("How to Use This Interactive Appendix"),
+                                 shiny::p("This web application is designed to provide an interactive exploration of the research clusters discussed in our paper.
+              It allows you to dynamically filter and view the data behind the figures."),
+                                 shiny::p("Navigate to the ", shiny::strong("Alluvial Explorer"), " tab to begin. You will find:"),
+                                 htmltools::tags$ul(
+                                   htmltools::tags$li(shiny::strong("Overall View:"), " Provides a global perspective on the entire corpus of articles,
+                        showing distributions by year, discipline, country, and journal."),
+                                   htmltools::tags$li(shiny::strong("Cluster View:"), " Allows you to select a specific research cluster from the dropdown menu.
+                        All plots and tables will then dynamically update to reflect only the articles belonging to that cluster.
+                        This is useful for in-depth analysis of a particular research stream.")
+                                 )
+                      ),
+
+                      shiny::div(class = "about-section",
+                                 shiny::h2("Code, Data, and Contact"),
+                                 shiny::p("We believe in open and reproducible science. All resources related to this project are publicly available."),
+                                 htmltools::tags$ul(
+                                   htmltools::tags$li(
+                                     shiny::icon("github"), " ",
+                                     shiny::strong("Shiny App Code:"), " The source code for this interactive application is available on ",
+                                     htmltools::tags$a(href = "https://github.com/ncamilotto/app_trustgame_appendix", "GitHub.", target = "_blank")
+                                   ),
+                                   htmltools::tags$li(
+                                     shiny::icon("github"), " ",
+                                     shiny::strong("Data Processing Code:"), " The scripts used for data collection and preparation are available in a separate ",
+                                     htmltools::tags$a(href = "https://github.com/ncamilotto/trustgame-paper", "repository on GitHub.", target = "_blank")
+                                   ),
+                                   htmltools::tags$li(
+                                     shiny::icon("database"), " ",
+                                     shiny::strong("Data Source:"), " The bibliographic data was extracted from the Web of Science Core Collection.
+                  A processed version of the data used in this app is available at https://doi.org/10.17605/OSF.IO/ZE2MC."
+                                   ),
+                                   htmltools::tags$li(
+                                     shiny::icon("envelope"), " ",
+                                     shiny::strong("Contact:"), " For any questions, suggestions, or issues, please contact Nicolas Camilotto at ",
+                                     htmltools::tags$a(href = "mailto:ncamilotto@gmail.com", "ncamilotto@gmail.com.")
+                                   )
+                                 )
+                      )
+                    )
     )
   )
+
 
   # ===================================================================
   # SERVER
