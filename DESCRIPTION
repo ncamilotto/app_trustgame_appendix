@@ -1,7 +1,7 @@
 Package: app.trustgame.appendix
 Type: Package
 Title: An Interactive Appendix for 'The Trust Game: A Historical and Methodological Analysis on the Frontier of Experimental and Behavioral Economics'
-Version: 0.1.0
+Version: 0.1.1
 Author: Nicolas Camilotto
 Description: This web application is designed to provide an interactive exploration of the research clusters discussed in our paper. It allows you to dynamically filter and view the data behind the figures.
 License: MIT + file LICENSE

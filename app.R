@@ -2,7 +2,7 @@
 # Point d'entrée pour Posit Connect
 
 # -- Étape 1 : Installation du package (inchangée) --
-# On s'assure que 'remotes' est disponible
+# On s'assure que 'remotes' est disponible 
 if (!requireNamespace("remotes", quietly = TRUE)) {
   install.packages("remotes")
 }
